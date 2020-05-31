@@ -3,7 +3,14 @@
     // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
     function startr(){
       $('.startButton').css('font-size','35px');
+      $('.startButton').css('display','inline-block');
       $('.startButton').text('Now Listening...');
+      $('.yourscoretext').css('display','block');
+      $('.startButton').css('-webkit-animation-iteration-count','1');
+      $('.reset').attr('src','./img/reset.png');
+      $('.reset').css('display','block');
+
+          
 
      console.log ("starting...");
      navigator.getUserMedia = navigator.getUserMedia ||
@@ -46,11 +53,51 @@
               $('.score').text('Score: '+ Math.round(highest));
 
               console.log(average);
-              if(average>40){
-                console.log("Someone is talking!");
+              if(highest > 15){
+                $('.result-text').text('SNAIL');
+                $('.result-image').attr("src", "./img/snail.png");
+              }
+              if(highest > 20){
+                $('.result-text').text('GOAT');
+                $('.result-image').attr("src", "./img/goat.png");
+              }
+              if(highest > 30){
+                $('.result-text').text('CAT MEOW');
+                $('.result-image').attr("src", "./img/cat.png");
+              }
+              if(highest>40){
+                // console.log("Someone is talking!");
 
                 $('.result-text').text('HUMAN');
                 $('.result-image').attr("src", "./img/human.png");
+              }
+              if(highest > 50){
+                $('.result-text').text('DOG BARKING');
+                $('.result-image').attr("src", "./img/dog.png");
+              }
+              if(highest > 55){
+                $('.result-text').text('WOLF HOWLING');
+                $('.result-image').attr("src", "./img/wolf.png");
+              }
+              if(highest > 60){
+                $('.result-text').text('TRAIN');
+                $('.result-image').attr("src", "./img/train.png");
+              }
+              if(highest > 70){
+                $('.result-text').text('ROCKER');
+                $('.result-image').attr("src", "./img/rock.png");
+              }
+              if(highest > 80){
+                $('.result-text').text('LION');
+                $('.result-image').attr("src", "./img/lion.png");
+              }
+              if(highest > 90){
+                $('.result-text').text('BOMB');
+                $('.result-image').attr("src", "./img/bomb.png");
+              }
+              if(highest > 100){
+                $('.result-text').text('DRAGON');
+                $('.result-image').attr("src", "./img/dragon.png");
               }
 
     //          console.log(Math.round(average - 40));

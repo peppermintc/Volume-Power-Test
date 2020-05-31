@@ -31,6 +31,29 @@
     <script src="./script.js"></script>
     <link rel="stylesheet" href="./style.css">
 
+    
+    <style>
+      @media screen and (max-width: 1200px) { #logo { width: 100%; } }
+
+
+      @-webkit-keyframes blinker {
+        from { opacity: 1.0; }
+        to { opacity: 0.0; }
+      }
+
+      .startButton {
+        -webkit-animation-name: blinker;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+        -webkit-animation-duration: 1.7s;
+      }
+      .recording {
+        -webkit-animation-name: blinker;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+        -webkit-animation-duration: 1.7s;
+      }
+    </style>
   </head>
   <body>
     <script>
@@ -103,7 +126,7 @@ if (navigator.getUserMedia) {
 
     <div id="root"></div>
 
-    <img src="./img/logo.png" alt='logo' style="margin-top: 35px;"/>
+    <a href="/" style="margin-top: 35px;"><img id="logo" src="./img/logo.png" alt='logo' /></a>
     <!-- MIC VOLUME MODULE -->
     <!-- <h3>VU meter from mic input (getUserMedia API)</h3> -->
     <!-- <button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button> -->
@@ -112,6 +135,7 @@ if (navigator.getUserMedia) {
     
     <br>
 
+    
     <div class="startButton" style="vertical-align: middle; cursor: pointer; margin-top: 40px;">
       <a onclick="startr();">
         <img src="./img/clickstart.png" alt="clickstart" style="width: 300px;" />
@@ -121,14 +145,17 @@ if (navigator.getUserMedia) {
     <div class="score"></div>
 
     <div id="result" style='padding-top: 30px; margin-left:50%; width: 350px; height: 290px; font-size: 20px;'>
-      <div style="padding-bottom: 20px;">Your Vocal Power is</div>
+      <div class="yourscoretext" style="padding-bottom: 20px; display: none;">Your Vocal Power is</div>
       <img class="result-image" style="height: 250px;"/>
       <div class="result-text" style="font-weight: 800; font-size: 30px;"></div>
     </div>
 
+    <a href="/"><img class="reset" style="display: none; height: 40px; margin-left: 30px;"/></a>
+
     <!--
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
 
   </body>
 </html>
