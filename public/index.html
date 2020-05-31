@@ -108,6 +108,8 @@ if (navigator.getUserMedia) {
     <!-- <h3>VU meter from mic input (getUserMedia API)</h3> -->
     <!-- <button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button> -->
     <canvas id="canvas" width="150" height="300" style='left:25%; width: 200px; height: 200px; margin-top: 210px;'></canvas>
+
+    
     <br>
 
     <div class="startButton" style="vertical-align: middle; cursor: pointer; margin-top: 40px;">
@@ -115,6 +117,13 @@ if (navigator.getUserMedia) {
         <img src="./img/clickstart.png" alt="clickstart" style="width: 300px;" />
       </a>    
       <div>Please allow mic access for test</div>
+    </div>
+    <div class="score"></div>
+
+    <div id="result" style='padding-top: 30px; margin-left:50%; width: 350px; height: 290px; font-size: 20px;'>
+      <div style="padding-bottom: 20px;">Your Vocal Power is</div>
+      <img class="result-image" style="height: 250px;"/>
+      <div class="result-text" style="font-weight: 800; font-size: 30px;"></div>
     </div>
 
     <!--

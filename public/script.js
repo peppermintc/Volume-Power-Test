@@ -1,5 +1,5 @@
     // import Result from './Result';
-    
+    let highest = 0;
     // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
     function startr(){
       $('.startButton').css('font-size','35px');
@@ -40,10 +40,17 @@
 
               var average = values / length;
               
+              if(average > highest) {
+                highest = average;
+              }
+              $('.score').text('Score: '+ Math.round(highest));
+
               console.log(average);
               if(average>40){
                 console.log("Someone is talking!");
-                // <Result/>
+
+                $('.result-text').text('HUMAN');
+                $('.result-image').attr("src", "./img/human.png");
               }
 
     //          console.log(Math.round(average - 40));
