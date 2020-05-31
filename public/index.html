@@ -25,19 +25,29 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <!-- MIC VOLUME MODULE -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <img src="./img/logo.png" alt='logo'/>
+    <!-- MIC VOLUME MODULE -->
+    <h3>VU meter from mic input (getUserMedia API)</h3>
+    <!-- <button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button> -->
+    <canvas id="canvas" width="150" height="300" style='background:blue'></canvas>
+    <br>
+    <button onclick="startr();">CLICK START</button>
+    <div align=left>See JS for attribution</div>
+
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
   </body>
 </html>
