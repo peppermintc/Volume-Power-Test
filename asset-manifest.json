@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Volume-Power-Test/static/css/main.037c0178.chunk.css",
+    "main.js": "/Volume-Power-Test/static/js/main.2765c0b3.chunk.js",
+    "main.js.map": "/Volume-Power-Test/static/js/main.2765c0b3.chunk.js.map",
+    "runtime-main.js": "/Volume-Power-Test/static/js/runtime-main.d65f84a8.js",
+    "runtime-main.js.map": "/Volume-Power-Test/static/js/runtime-main.d65f84a8.js.map",
+    "static/js/2.81151497.chunk.js": "/Volume-Power-Test/static/js/2.81151497.chunk.js",
+    "static/js/2.81151497.chunk.js.map": "/Volume-Power-Test/static/js/2.81151497.chunk.js.map",
+    "index.html": "/Volume-Power-Test/index.html",
+    "precache-manifest.18d3f0d9c1a86d1b2bcdb9743132d2ee.js": "/Volume-Power-Test/precache-manifest.18d3f0d9c1a86d1b2bcdb9743132d2ee.js",
+    "service-worker.js": "/Volume-Power-Test/service-worker.js",
+    "static/css/main.037c0178.chunk.css.map": "/Volume-Power-Test/static/css/main.037c0178.chunk.css.map",
+    "static/js/2.81151497.chunk.js.LICENSE.txt": "/Volume-Power-Test/static/js/2.81151497.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d65f84a8.js",
+    "static/js/2.81151497.chunk.js",
+    "static/css/main.037c0178.chunk.css",
+    "static/js/main.2765c0b3.chunk.js"
+  ]
+}
