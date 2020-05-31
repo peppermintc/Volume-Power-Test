@@ -43,11 +43,11 @@
     //          console.log(Math.round(average - 40));
 
               canvasContext.clearRect(0, 0, 150, 300);
-              canvasContext.fillStyle = '#FF0A55'; //was BadA55 (very cute)
+              canvasContext.fillStyle = 'white'; //was BadA55 (very cute)
               canvasContext.fillRect(0, 300 - average, 150, 300);
-              canvasContext.fillStyle = '#F62626';
-              canvasContext.font = "24px impact";
-              canvasContext.fillText(Math.round(average - 40), 2, 30);
+              canvasContext.fillStyle = 'white';
+              canvasContext.font = "40px impact";
+              canvasContext.fillText(Math.round(average), 54, 60);
               // console.log (average);
             } // end fn stream
         },

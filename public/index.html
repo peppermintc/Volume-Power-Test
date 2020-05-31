@@ -38,12 +38,17 @@
 
     <img src="./img/logo.png" alt='logo'/>
     <!-- MIC VOLUME MODULE -->
-    <h3>VU meter from mic input (getUserMedia API)</h3>
+    <!-- <h3>VU meter from mic input (getUserMedia API)</h3> -->
     <!-- <button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button> -->
-    <canvas id="canvas" width="150" height="300" style='background:blue'></canvas>
+    <canvas id="canvas" width="150" height="300" style='left:25%; width: 200px; height: 200px; margin-top: 150px;'></canvas>
     <br>
-    <button onclick="startr();">CLICK START</button>
-    <div align=left>See JS for attribution</div>
+
+    <div style="vertical-align: middle; cursor: pointer;">
+      <a onclick="startr();">
+        <img src="./img/clickstart.png" alt="clickstart" style="width: 300px;" />
+      </a>    
+      <div>Please allow mic access for test</div>
+    </div>
 
     <!--
       To create a production bundle, use `npm run build` or `yarn build`.
