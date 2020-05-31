@@ -1,5 +1,10 @@
+    // import Result from './Result';
+    
     // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
     function startr(){
+      $('.startButton').css('font-size','35px');
+      $('.startButton').text('Now Listening...');
+
      console.log ("starting...");
      navigator.getUserMedia = navigator.getUserMedia ||
        navigator.webkitGetUserMedia ||
@@ -38,6 +43,7 @@
               console.log(average);
               if(average>40){
                 console.log("Someone is talking!");
+                // <Result/>
               }
 
     //          console.log(Math.round(average - 40));

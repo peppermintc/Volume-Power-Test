@@ -33,17 +33,84 @@
 
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      window.onload = function start2() {
+        
+    
+
+
+
+navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia;
+if (navigator.getUserMedia) {
+ navigator.getUserMedia({
+     audio: true
+   },
+   function(stream) {
+     audioContext = new AudioContext();
+     analyser = audioContext.createAnalyser();
+     microphone = audioContext.createMediaStreamSource(stream);
+     javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+     analyser.smoothingTimeConstant = 0.8;
+     analyser.fftSize = 1024;
+
+     microphone.connect(analyser);
+     analyser.connect(javascriptNode);
+     javascriptNode.connect(audioContext.destination);
+
+     canvasContext = $("#canvas")[0].getContext("2d");
+
+     javascriptNode.onaudioprocess = function() {
+         var array = new Uint8Array(analyser.frequencyBinCount);
+         analyser.getByteFrequencyData(array);
+         var values = 0;
+         
+         var length = array.length;
+         for (var i = 0; i < length; i++) {
+           values += (array[i]);
+         }
+
+         var average = values / length;
+         
+         console.log(average);
+         if(average>40){
+           console.log("Someone is talking!");
+           // <Result/>
+         }
+
+//          console.log(Math.round(average - 40));
+
+         canvasContext.clearRect(0, 0, 150, 300);
+         canvasContext.fillStyle = 'white'; //was BadA55 (very cute)
+         canvasContext.fillRect(0, 300 - average, 150, 300);
+         canvasContext.fillStyle = 'white';
+         canvasContext.font = "40px impact";
+         canvasContext.fillText(Math.round(average), 54, 60);
+         // console.log (average);
+       } // end fn stream
+   },
+   function(err) {
+     console.log("The following error occured: " + err.name)
+   });
+} else {
+ console.log("getUserMedia not supported");
+}
+
+      }
+    </script>
+
     <div id="root"></div>
 
-    <img src="./img/logo.png" alt='logo'/>
+    <img src="./img/logo.png" alt='logo' style="margin-top: 35px;"/>
     <!-- MIC VOLUME MODULE -->
     <!-- <h3>VU meter from mic input (getUserMedia API)</h3> -->
     <!-- <button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button> -->
-    <canvas id="canvas" width="150" height="300" style='left:25%; width: 200px; height: 200px; margin-top: 150px;'></canvas>
+    <canvas id="canvas" width="150" height="300" style='left:25%; width: 200px; height: 200px; margin-top: 210px;'></canvas>
     <br>
 
-    <div style="vertical-align: middle; cursor: pointer;">
+    <div class="startButton" style="vertical-align: middle; cursor: pointer; margin-top: 40px;">
       <a onclick="startr();">
         <img src="./img/clickstart.png" alt="clickstart" style="width: 300px;" />
       </a>    
